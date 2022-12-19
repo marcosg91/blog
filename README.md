@@ -1,9 +1,19 @@
-# blog
-App tipo "blog" desarrollada para ONG "Mi bella ciudad" por el Grupo 1 - Informatorio 2022
+# ONG - MI BELLA CIUDAD "APP TIPO BLOG" 
 
-Integrantes: 
+_Desarrollo de aplicacion web que responde a las necesidades especificadas por la ONG_
 
-Micaela Aldana Bonnettini
-Lucia Guadalupe Gomez
-Marcos Gonzalez
-Gonzalo Villar
+
+## Construido con 🛠️
+
+_Herramientas utilizadas en el proyecto_
+
+* [Django](https://www.djangoproject.com/) - El framework web usado.
+* [VisualStudioCode](https://code.visualstudio.com//) - Editor de codigo de fuente.
+* [GitHub](https://github.com/) - Plataforma de alojamiento de código para control de versiones y colaboración.
+* [Diagrams.net](https://www.diagrams.net/) - Para realizar el modelado del MER.
+* [Bootstrap](https://getbootstrap.com/) - Para obtener recursos para el desarrollo del front-end.
+
+
+## Autores ✒️
+
+_Tomas Zorrilla.Leandro Villordo.Bonnettini Micaela Aldana.Villar Gonzalo. Gomez Lucila Guadalupe.Gonzalez Marcos.Colman Camila.Ariel Encinas_
