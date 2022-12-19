@@ -22,5 +22,4 @@ _Herramientas utilizadas en el proyecto_
 * **Villar Gonzalo.**
 * **Gomez Lucila Guadalupe.**
 * **Gonzalez Marcos.**
-* **Colman Camila.**
 * **Ariel Encinas.**
