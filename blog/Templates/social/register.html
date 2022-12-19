@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+</head>
+
+<body>
+
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" id="submit">registrarse</button>
+    </form>
+    
+    {% if messages %} 
+    {% for message in messages %} 
+    <div class="notification {{ messages.tags }} ">
+        {{ message }}
+    
+    </div>
+    {% endfor %} 
+    {% endif %} 
+</body>
+
+
+<footer>
+    Información de integrantes: Presidenta Marta Acosta
+
+Lugar: Dir. Joaquin V Gonzalez 760
+
+Información de contacto: 3624-648735
+ 
+
+</footer>
+</html>
