@@ -16,11 +16,11 @@ _Herramientas utilizadas en el proyecto_
 
 ## Autores ✒️
 
-_Tomas Zorrilla._
-_Leandro Villordo._
-_Bonnettini Micaela Aldana._
-_Villar Gonzalo._
-_Gomez Lucila Guadalupe._
-_Gonzalez Marcos._
-_Colman Camila._
-_Ariel Encinas._
+* **Tomas Zorrilla.**
+* **Leandro Villordo.**
+* **Bonnettini Micaela Aldana.**
+* **Villar Gonzalo.**
+* **Gomez Lucila Guadalupe.**
+* **Gonzalez Marcos.**
+* **Colman Camila.**
+* **Ariel Encinas.**
