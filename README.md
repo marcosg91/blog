@@ -20,6 +20,6 @@ _Herramientas utilizadas en el proyecto_
 * **Leandro Villordo.**
 * **Bonnettini Micaela Aldana.**
 * **Villar Gonzalo.**
-* **Gomez Lucila Guadalupe.**
+* **Gomez Lucia Guadalupe.**
 * **Gonzalez Marcos.**
 * **Ariel Encinas.**
