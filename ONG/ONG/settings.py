@@ -52,6 +52,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ONG.urls'
 
+LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+
 
 TEMPLATES_DIRS = os.path.join(BASE_DIR,'Templates')
 TEMPLATES = [

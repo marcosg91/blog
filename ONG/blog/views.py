@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.forms import UserCreationForm
 #from django.contrib import messages
 from .models import *
 from .forms import UserRegistrationForm, CommentForm
@@ -42,7 +41,7 @@ def postdetail(request, post):
     
     # Comment posted
     if request.method == 'POST':
-        comment_form = UserRegistrationForm(data=request.POST)
+        comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             # Create Comment object but don't save to database yet
             #new_comment = comment_form.save(commit=False)
@@ -52,7 +51,7 @@ def postdetail(request, post):
             # Save the comment to the database
             comment_form.save()
     else:
-        comment_form = UserRegistrationForm()
+        comment_form = CommentForm()
 
     context = {'post': post, 'comment': comment,'comment_form': comment_form}
     return render(request, template_name, context)
@@ -63,12 +62,12 @@ def postdetail(request, post):
 def  registerView(request):
     template_name =  "registration/register.html"
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('login_url')
     else:
-        form=UserCreationForm()
+        form=UserRegistrationForm()
 
     context={"form": form}
     return render (request, template_name ,context)
@@ -76,9 +75,13 @@ def  registerView(request):
 
 
 def Quienes_somos(request):
-    return render (request, "social/Quienes_somos.html")
+    return render(request, "social/Quienes_somos.html")
 
 
 
 
-
+def NavBare(request):
+    template_name = 'navbar.html'
+    caters = Category.objects.all()
+    context = { 'caters': caters }
+    return render(request, template_name, context)

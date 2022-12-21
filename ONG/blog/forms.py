@@ -6,9 +6,17 @@ from .models import Comment
 
 
 class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ('content',)
+	#content = forms.CharField(label='content', widget=forms.TextInput( attrs={
+	#	"placeholder": "Añadir un comentario.",
+	#}),)
+	class Meta:
+		model = Comment
+		fields = ('content',)
+		widgets = {
+			'content': forms.TextInput(attrs={
+				'placeholder': 'Añadir un comentario.',
+				'style': 'weidth:80%'
+		}),}
 
 
 class UserLoginForm(AuthenticationForm):

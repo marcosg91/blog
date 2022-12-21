@@ -17,7 +17,7 @@
           <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top img-fluid mx-auto" src="{{ post.image}}" style="width:100%; height: 200px;" alt="Card image cap" /></a>
           <div class="card-body">
             <a href="{% url 'post_detail' post.slug %}"><h4 class="card-title text-center mt-0 mb-3">{{ post.title}}</h4></a>
-            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | <a href="{% url 'categorys' post.category.slug %}"> {{post.category}} </a></p>
+            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | <a href="{% url 'categorys_url' post.category.slug %}"> {{post.category}} </a></p>
             <p class="card-text lead text-center">{{ post.excerpt }}</p>
 
             <div class="d-flex justify-content-center mt-5 mb-5">

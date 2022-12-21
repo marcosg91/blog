@@ -12,11 +12,20 @@ admin.site.register(Category, CategoryAdmin)
 
 
 
+@admin.action(description='Mark selected stories as published')
+def make_published(modeladmin, request, queryset):
+    queryset.update(status='publish')
+
+@admin.action(description='Mark selected stories as draft')
+def make_draft(modeladmin, request, queryset):
+    queryset.update(status='draft')
+
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('id', 'title', 'slug', 'author', 'category', 'created_on', 'status')
 	list_filter = ('status',)
 	search_fields = ('post', 'category')
 	prepopulated_fields = {'slug': ('title',),}
+	actions = [make_published, make_draft]
 
 admin.site.register(Publicación, PostAdmin)
 

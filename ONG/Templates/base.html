@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -9,143 +10,13 @@
         <meta name="google" content="notranslate" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">  
         {% load static %}
-        <link href="{% static 'estilos.css' %}" rel="stylesheet" type="text/css" >
+        <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" >
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </head>
 
     <body>
-        <style>
-            body {
-            font-family: "Roboto", sans-serif;
-            font-size: 17px;
-            background-color: #fdfdfd;
-        }
-        .shadow {
-            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
-        }
-        .btn-danger {
-            color: #fff;
-            background-color: #f00000;
-            border-color: #dc281e;
-        }
-        .masthead {
-            background: #3398E1;
-            height: auto;
-            padding-bottom: 15px;
-            box-shadow: 0 16px 48px #E3E7EB;
-            padding-top: 10px;
-        }
 
-
-    .address h2{
-        padding-bottom: 15px;
-        font-size: 20px;
-        font-weight: 600;
-    }
-    .address img{
-        padding-bottom: 15px;
-    }
-    .address-links li a{
-        color: #000;
-        font-size: 15px;
-        font-weight: 500;
-
-    }
-    .address-links .address1{
-        font-weight: 500;
-        font-size: 15px;
-        display: flex;
-    }
-    .address-links{
-            line-height: 32px;
-    }
-    </style>
-
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
-        <div class="container-fluid">
-            {% load static %}
-            <a class="navbar-brand" href="{% url 'home' %}"> <img style="weight:150px; height:40px" src="{% static '/media/logo.jpg' %}" alt="My image" /></a>
-            
-           
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item text-black dropdown">
-                        <a class="nav-link text-black font-weight-bold dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="{% url 'noticias_url' %}">Noticias</a>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">categorys</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li>
-                    <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="#">Nosotros</a>
-                    </li>
-                    <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="#">Recursos</a>
-                    </li>
-                    <li class="nav-item text-black">
-                        <a class="nav-link text-black font-weight-bold" href="#">Contactos</a>
-                    </li>
-
-                    {% if request.user.is_authenticated %}
-                        <li class="nav-item text-black">
-                          <a class="has-text-light mr-2 nav-link text-black font-weight-bold">
-                            Welcome, "{{ user.username }}"
-                          </a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a href="{% url 'logout' %}" class="button is-danger nav-link text-black font-weight-bold"><strong>Logout</strong></a>
-                        </li >
-                    {% else %}
-                        <li class="nav-item text-black">
-                            <a href="{% url 'register_url' %}" class="button is-success mr-2 nav-link text-black font-weight-bold"><strong>Sign up</strong></a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a href="{% url 'login_url' %}" class="button is-light nav-link text-black font-weight-bold">Log in</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">BIENVENIDOS!</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  MENU
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="register">Registro</a></li>
-                  <li><a class="dropdown-item" href="Quienes_somos">Quienes somos</a></li>
-                  <li><a class="dropdown-item" href="login">Login</a></li>
-              
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-
-        
+        {% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
 
         <div>
         {% block content %}
@@ -171,10 +42,10 @@
                             <h2>Address</h2>
                             <img src="" alt="" class="img-fluid">
                             <div class="address-links">
-                                <li class="address1">Kolathur ramankulam-
-                                    Malappuram Dt 
-                                   Kerala 679338</li>
-                                <li><a href=""><i class="bi bi-telephone-fill"></i> +91 90904500112</a></li>
+                                <li class="address1">
+                                    Presidenta Marta Acosta
+                                    UBICACION: Dir. Joaquin V Gonzalez 760 </li>
+                                <li><a href=""><i class="bi bi-telephone-fill"></i>CONTACTO: +54 3624-648735 </a></li>
                                 <li><a href=""><i class="fa-solid fa-envelope"></i> mail@1234567.com</a></li>
                             </div>
                         </div>
@@ -188,40 +59,7 @@
                 <p class="m-0 text-dark text-center ">Copyright &copy; Django Central</p> 
             </div>
 
-            <footer>
-
-  <section1>
-
-  <p style="color:RGB(255,255,255)"> 
-Presidenta Marta Acosta
-</p>
-
-<p style="color:RGB(255,255,255)">
-  UBICACION: Dir. Joaquin V Gonzalez 760           CONTACTO: 3624-648735 
-</p>
-
-</section>
-
-<section1>
-<p 
-
-style="color:RGB(255,255,255)">
-FACEBOOK: /CentroDeGestionyParticipacionCiudadana
-
-</section>  
-
-<p>    Información de integrantes: Presidenta Marta Acosta
-
-Lugar: Dir. Joaquin V Gonzalez 760
-
-Información de contacto: 3624-648735
- 
-</p>
-
- 
-</footer>
-        </footer>
-
+            </footer>
 
     </body>
 </html>

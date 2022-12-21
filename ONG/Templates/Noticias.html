@@ -32,7 +32,7 @@
       <div style="display: flex; flex-direction: row">
         <h5 class="card-title">{{ post.title }}</h5>
       </div>
-      <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | <a href="{% url 'categorys' post.category.slug %}"> {{post.category}} </a></p>
+      <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | <a href="{% url 'categorys_url' post.category.slug %}"> {{post.category}} </a></p>
         <p class="card-text">{{ post.excerpt }}</p>
         <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More &rarr;</a>
     </div>
