@@ -1,40 +1,48 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages
+#from django.contrib import messages
 from .models import *
+from .forms import UserRegistrationForm, CommentForm
 
 
-
-
-# Create your views here.
 def HomeView(request):
-    template_name = "home.html"
-    #articulos = Noticias.objects.filter(status='publish')
-    #context = {'articulos': articulos}
-    return render(request, template_name )#, context=context)
+    template = 'home.html'
+    #posts = Publicación.objects.filter(status='publish')
+    post3 = Publicación.objects.filter(status='publish')[:6]
+    #menu_intems = NavMenu.objects.all()
+    context = { "post3": post3 }
+    return render(request, template, context)
 
 
-def Noticias(request):
-    template_name = "Noticias.html"
-    articulos = Noticias.objects.filter(status='publish')
-    context = {'articulos': articulos}
-    return render (request, template_name, context)
+def NoticiasView(request):
+    template_name = 'Noticias.html'
+    category = Category.objects.all()
+    Filter_Post = request.GET.get('PostFilter', None)
+    if Filter_Post:
+        listings = Publicación.objects.filter(category__name=Filter_Post, status='publish')
+    elif Filter_Post == 'None':
+        listings = Publicación.objects.filter(status='publish')
+    else:
+        listings = Publicación.objects.filter(status='publish')
+
+    context = { 'category': category, 'listings':listings }
+    return render(request, template_name, context)
 
 def CategoryView(request, cats):
     template_name = 'category.html'
-    category_post = Noticias.objects.filter(category__slug=cats, status='publish')
+    category_post = Publicación.objects.filter(category__slug=cats, status='publish')
     context = {'category': cats, 'category_post': category_post}
     return render(request, template_name, context)
 
 
 def postdetail(request, post):
     template_name = 'single.html'
-    post = get_object_or_404(Noticias, slug=post, status='publish') 
+    post = get_object_or_404(Publicación, slug=post, status='publish') 
     comment = post.comment_post.filter(active=True)
     
     # Comment posted
     if request.method == 'POST':
-        comment_form = CommentForm(data=request.POST)
+        comment_form = UserRegistrationForm(data=request.POST)
         if comment_form.is_valid():
             # Create Comment object but don't save to database yet
             #new_comment = comment_form.save(commit=False)
@@ -44,9 +52,9 @@ def postdetail(request, post):
             # Save the comment to the database
             comment_form.save()
     else:
-        comment_form = CommentForm()
+        comment_form = UserRegistrationForm()
 
-    context = {'post': post, 'comments': comments,'comment_form': comment_form}
+    context = {'post': post, 'comment': comment,'comment_form': comment_form}
     return render(request, template_name, context)
 
 

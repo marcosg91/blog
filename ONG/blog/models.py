@@ -14,8 +14,11 @@ class Category(models.Model):
         unique_together = ('slug',)
         verbose_name_plural = "categories"
 
+    def __str__(self):
+        return self.name
 
-class Noticias(models.Model):
+
+class Publicación(models.Model):
 
     STATUS = (
         ('draft',"Draft"),
@@ -42,7 +45,7 @@ class Noticias(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Noticias,on_delete=models.CASCADE, related_name="comment_post")
+    post = models.ForeignKey(Publicación,on_delete=models.CASCADE, related_name="comment_post")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

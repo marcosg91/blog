@@ -1,14 +1,53 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} ONG - POST {% endblock title %}
 
 
-<footer>
-    Información de integrantes: Presidenta Marta Acosta
+{% block content %}
 
-Lugar: Dir. Joaquin V Gonzalez 760
 
-Información de contacto: 3624-648735
- 
+<form method="GET" action="{% url 'noticias_url' %}">
+  {% csrf_token %}
+    <label for="PostSelect">Choose Category</label>
+    <select name="PostFilter">
+      <option selected><button>None</button></option>
+      {% for cate in category%}
+        <option><button  type="submit">{{cate.name}}</button></option>
+      {% endfor %}
+    </select>
+    <button type="submit" class="btn btn-info btn-sm mt-1 mb-1">Filter</button>
+    <!--<br><br>
+    <input type="submit" name="PostSelect" value="submit"/>-->
+</form>
 
-</footer>
-</html>
+
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap">
+
+  {% for post in listings %}
+  <div class="card" style="width: 19rem; margin: 10px">
+    <a href="{% url 'post_detail' post.slug %}"><img src="/{{post.image}}" class="card-img-top" alt="Card image cap"/> </a>
+    <div class="card-body">
+      <div style="display: flex; flex-direction: row">
+        <h5 class="card-title">{{ post.title }}</h5>
+      </div>
+      <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | <a href="{% url 'categorys' post.category.slug %}"> {{post.category}} </a></p>
+        <p class="card-text">{{ post.excerpt }}</p>
+        <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More &rarr;</a>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+

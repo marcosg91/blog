@@ -18,7 +18,7 @@ class PostAdmin(admin.ModelAdmin):
 	search_fields = ('post', 'category')
 	prepopulated_fields = {'slug': ('title',),}
 
-admin.site.register(Noticias, PostAdmin)
+admin.site.register(Publicación, PostAdmin)
 
 class CommentAdmin(admin.ModelAdmin):
 	list_display = ('id', 'author', 'created_on', 'active', 'post')

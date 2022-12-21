@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c0mj2ozwi6=o1*cjahbu8po3eqp7y*+t2o0wx6sx6#=g05cyz8'
+SECRET_KEY = 'django-insecure-ho@qmjvd7$3**&o&jdro*rrqtvh24k6p!9s#)_q5vka6%_-==p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -53,15 +53,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'ONG.urls'
 
 
-
 TEMPLATES_DIRS = os.path.join(BASE_DIR,'Templates')
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static')
-    ]
-
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -1,25 +1,36 @@
 {% extends 'base.html' %}
 
 
-{% block title %} {{category}} {% endblock title %}
+{% block title %} ONG - Home {% endblock title %}
 
 
 {% block content %}
 
-      <section>
-        {% for elemento in articulos %}
-             <article>
-                <h3> {{ elemento.nombre }} </h3>
-                <P>
-                    {{elemento.contenido}}
-                </P>
+     <!-- Post lastest -->
 
-                <img src="media/{{ elemento.imagen }} ">
-             </article>
-             
-        {% endfor %}
+<div id="services" class="block" style="background-image: url('static/home_page/img/image5.jpg'); background-attachment: fixed; height:auto; padding: 30px!important; ">
+  <h1 class="text-center text-uppercase mt-3 text-white wow jackInTheBox" data-wow-delay="0.1s">Últimas Novedades:</h1>
+  <div class="container">
+    <div class="card-deck" style="display:grid; grid-template-columns: 1fr 1fr 1fr;">
+      {% for post in post3 %}
+        <div class="card my-5 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1.2s">
+          <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top img-fluid mx-auto" src="{{ post.image}}" style="width:100%; height: 200px;" alt="Card image cap" /></a>
+          <div class="card-body">
+            <a href="{% url 'post_detail' post.slug %}"><h4 class="card-title text-center mt-0 mb-3">{{ post.title}}</h4></a>
+            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | <a href="{% url 'categorys' post.category.slug %}"> {{post.category}} </a></p>
+            <p class="card-text lead text-center">{{ post.excerpt }}</p>
+
+            <div class="d-flex justify-content-center mt-5 mb-5">
+                <a href="{% url 'post_detail' post.slug %}" target="_blank" type="button" class="btn btn-outline-success btn-md"> &#x1F6C8; Learn More</a>
+            </div>
+          </div>
+        </div>
+      <div class="w-100 d-none d-sm-block d-md-none"></div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- features -->
     
-      </section>
-    
-   <div>
 {% endblock content %}
