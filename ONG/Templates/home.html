@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %} {{category}} {% endblock title %}
+
+
+{% block content %}
+
+      <section>
+        {% for elemento in articulos %}
+             <article>
+                <h3> {{ elemento.nombre }} </h3>
+                <P>
+                    {{elemento.contenido}}
+                </P>
+
+                <img src="media/{{ elemento.imagen }} ">
+             </article>
+             
+        {% endfor %}
+    
+      </section>
+    
+   <div>
+{% endblock content %}

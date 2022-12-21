@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Login - ONG {% endblock title %}
+
+
+{% block content %}
+
+<div class="login-page">
+        <div class="form">
+          <form method="POST" action="">
+            {% csrf_token %}
+            <h3 class="login-title">LOGIN</h3>
+            <div class="input-group mb-3">
+              <input type="text" name="username" placeholder="Username..." class="form-control">
+            </div>
+            <div class="input-group mb-2">
+                <input type="password" name="password" placeholder="Password..." class="form-control" >
+            </div>
+            <button type="submit"> Submit </button>
+          </form>
+
+          
+        </div>
+      </div>
+    
+
+
+
+{% endblock content %}
+
+

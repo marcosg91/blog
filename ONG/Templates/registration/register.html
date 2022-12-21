@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Register - ONG {% endblock title %}
+
+
+{% block content %}
+
+<h1>Holaa Registerrr???</h1>
+
+<form class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" id="submit">registrarse</button>
+    </form>
+    
+    {% if messages %} 
+    {% for message in messages %} 
+    <div class="notification {{ messages.tags }} ">
+        {{ message }}
+    
+    </div>
+    {% endfor %} 
+    {% endif %} 
+</body>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
