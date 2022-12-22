@@ -75,7 +75,7 @@ def  registerView(request):
 
 
 def Quienes_somos(request):
-    return render(request, "social/Quienes_somos.html")
+    return render(request, "Quienes_somos.html")
 
 
 

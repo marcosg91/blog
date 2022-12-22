@@ -32,22 +32,22 @@
     </div>
   </div>
 
-<h1>Holaaaa</h1>
+<h1></h1>
 <section class="gradient-custom">
   <div class="container my-5 py-5">
     <div class="row d-flex justify-content-center">
       <div class="col-md-12 col-lg-10 col-xl-8">
         <div class="card">
           <div class="card-body p-4">
-            <h4 class="text-center mb-4 pb-2">Nested comments section</h4>
+            <h4 class="text-center mb-4 pb-2">Comentarios</h4>
 
             <div>
               <!-- Comments Form --> 
-              <h2>Add a new comment</h2>
+              <h2>Nuevo comentario</h2>
               <form action="." method="post">
                   {{ comment_form.as_p }}
                   {% csrf_token %}
-                  <button type="submit">Add comment</button>
+                  <button type="submit">comentar</button>
               </form>
             </div>
 
@@ -64,7 +64,7 @@
                           <p class="mb-1">
                             {{ comment.author }}<span class="small">- {{ comment.created_on }} | 2 hours ago</span>
                           </p>
-                          <a href="" class="Hoverer"><i class="fas fa-reply fa-xs "></i><span class="small">reply</span></a>
+                          <a href="" class="Hoverer"><i class="fas fa-reply fa-xs "></i><span class="small">responder</span></a>
                         </div>
                         <p class="small mb-0">
                           {{ comment.content |linebreaks }}
@@ -75,7 +75,7 @@
                 </div>
               </div>
               {% empty %}
-                <h4>There are no comments yet.</h4>
+                <h4>no hay comentarios</h4>
             {% endfor %}
           </div>
         </div>
