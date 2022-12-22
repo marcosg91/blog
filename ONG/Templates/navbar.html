@@ -28,11 +28,11 @@
 
                                 <li><a class="dropdown-item" href="{% url 'home' %}">{{categorias}}</a></li>
                                 {% endfor %}
-                                <li><a class="dropdown-item" href="{% url 'home' %}">Nosotros</a></li>
+                                <li><a class="dropdown-item" href="{% url 'nosotros' %}">Nosotros</a></li>
                                 <div class="dropdown-divider"></div>
                                 <li><a class="dropdown-item" href="{% url 'home' %}">Recursos</a></li>
                                 <div class="dropdown-divider"></div>
-                                <li><a class="dropdown-item" href="{% url 'home' %}">Contactos</a></li>
+                                <li><a class="dropdown-item" href="{% url 'contactos' %}">Contactos</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -44,13 +44,13 @@
                     <a class="nav-link text-black font-weight-bold" href="{% url 'noticias_url' %}">Noticias</a>
                 </li>
                 <li class="nav-item text-black">
-                    <a class="nav-link text-black font-weight-bold" href="{% url 'Quienes_somos' %}">Nosotros</a>
+                    <a class="nav-link text-black font-weight-bold" href="{% url 'nosotros' %}">Nosotros</a>
                 </li>
                 <li class="nav-item text-black">
                     <a class="nav-link text-black font-weight-bold" href="#">Recursos</a>
                 </li>
                 <li class="nav-item text-black">
-                    <a class="nav-link text-black font-weight-bold" href="#">Contactos</a>
+                    <a class="nav-link text-black font-weight-bold" href="{% url 'contactos' %}">Contactos</a>
                 </li>
 
                 {% if request.user.is_authenticated %}

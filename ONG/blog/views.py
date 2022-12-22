@@ -75,7 +75,10 @@ def  registerView(request):
 
 
 def Quienes_somos(request):
-    return render(request, "Quienes_somos.html")
+    return render(request, "nosotros.html")
+
+def contactos(request):
+    return render(request, "contactos.html")
 
 
 

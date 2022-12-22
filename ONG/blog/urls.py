@@ -10,7 +10,8 @@ from blog.forms import UserLoginForm
 urlpatterns = [
     path('', views.HomeView, name="home"),
     path('Noticias/',views.NoticiasView,name="noticias_url"),
-    path('Quienes_somos/',views.Quienes_somos,name="Quienes_somos"),
+    path('Nosotros/',views.Quienes_somos,name="nosotros"),
+    path('Contactos/',views.contactos,name="contactos"),
     
     path('login/', LoginView.as_view(template_name= "registration/login.html", authentication_form= UserLoginForm), name="login_url"),
     path('register/',views.registerView,name="register_url"),
